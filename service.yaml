@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: grpc-knative-cluster2
+  namespace: knative-serving
+spec:
+  template:
+    spec:
+      containers:
+      - image: shahriarraka/simple-grpc-knative:latest
+        ports:
+          - containerPort: 50051
+

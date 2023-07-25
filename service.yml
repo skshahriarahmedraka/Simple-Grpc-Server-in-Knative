@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: grpc-knative-cluster2
+  name: grpc-knative-cluster1
   namespace: knative-serving
 spec:
   template:
@@ -9,5 +9,6 @@ spec:
       containers:
       - image: shahriarraka/simple-grpc-knative:latest
         ports:
-          - containerPort: 50051
+        - name: h2c
+          containerPort: 50051
 

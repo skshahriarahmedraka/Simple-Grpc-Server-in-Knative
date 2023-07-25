@@ -33,7 +33,7 @@ import (
 
 func main() {
 	
-	conn, err := grpc.Dial("grpc-knative-cluster3.default.127.0.0.1.sslip.io:80", grpc.WithInsecure(), grpc.WithBlock())
+	conn, err := grpc.Dial("grpc-knative-cluster4.default.127.0.0.1.sslip.io:80", grpc.WithInsecure(), grpc.WithBlock())
 	logs.Error("Error in connecting", err)
 	defer conn.Close()
 	fmt.Printf("%T\n",conn)
@@ -46,7 +46,7 @@ func ClientConnection(conn *grpc.ClientConn) {
 	c := messagepb.NewConversationClient(conn)
     fmt.Println("🚀ClientConnection  : ", c)
 	
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 	defer cancel()
 
 	r, err := c.Speaking(ctx, &messagepb.SpeakRequest{Client_Request: "raka"})

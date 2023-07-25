@@ -7,7 +7,10 @@ import (
 	"net"
 	"server/logs"
 	"server/proto"
+	"time"
+
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/keepalive"
 )
 
 type server struct {
@@ -25,7 +28,13 @@ func main() {
 	lis, err := net.Listen("tcp", "0.0.0.0:50051")
 	logs.Error("Error in listening", err)
 
-	MyServer := grpc.NewServer()
+	// MyServer := grpc.NewServer()
+
+	MyServer := grpc.NewServer(
+    grpc.KeepaliveParams(keepalive.ServerParameters{
+        MaxConnectionIdle: 5 * time.Minute,           // <--- This fixes it!
+    }),
+)
 
 	messagepb.RegisterConversationServer(MyServer, &server{})
 

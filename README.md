@@ -104,49 +104,42 @@ build docker image :
 ## deploy a service
 
 ```
-> sudo kn service create simple-grpc-knative2 --image=shahriarraka/simple-grpc-knative:latest --port=50051
+> sudo kubectl apply -f service.yml                                     
+service.serving.knative.dev/grpc-knative-cluster4 created
 ```
 
-### Output :
+![](./screenshot/Screenshot%20from%202023-07-25%2023-49-27.png)
 
-```
-Creating service 'simple-grpc-knative2' in namespace 'default':
+see all the service 
 
-  0.077s The Route is still working to reflect the latest desired specification.
-  0.133s ...
-  0.163s Configuration "simple-grpc-knative2" is waiting for a Revision to become ready.
- 14.367s ...
- 14.460s Ingress has not yet been reconciled.
- 14.564s Waiting for load balancer to be ready
- 14.683s Ready to serve.
+![](./screenshot/Screenshot%20from%202023-07-25%2023-48-59.png)
 
-Service 'simple-grpc-knative2' created to latest revision 'simple-grpc-knative2-00001' is available at URL:
-http://simple-grpc-knative2.default.127.0.0.1.sslip.io
-```
+
+
+
 
 ### nslookup :
 
 ```
-> nslookup  simple-grpc-knative2.default.127.0.0.1.sslip.io        
-Server:        127.0.0.53
-Address:    127.0.0.53#53
+> nslookup grpc-knative-cluster4.default.127.0.0.1.sslip.io
+Server:		127.0.0.53
+Address:	127.0.0.53#53
 
 Non-authoritative answer:
-Name:    simple-grpc-knative2.default.127.0.0.1.sslip.io
+Name:	grpc-knative-cluster4.default.127.0.0.1.sslip.io
 Address: 127.0.0.1
+
 ```
 
-![](./screenshot/Screenshot%20from%202023-07-25%2016-06-52.png)
+![](./screenshot/Screenshot%20from%202023-07-25%2023-51-09.png)
 
-![](./screenshot/Screenshot%20from%202023-07-25%2016-07-01.png)
+
 
 ### From client Grpc :
 
-Error because Grpc only work on the top of HTTP2 , but Knative is serving a HTTP1.1 url
+url : `grpc-knative-cluster4.default.127.0.0.1.sslip.io`
 
-`http://simple-grpc-knative2.default.127.0.0.1.sslip.io`
-
-![](./screenshot/Screenshot%20from%202023-07-25%2016-30-43.png)
+![](./screenshot/Screenshot%20from%202023-07-25%2023-48-26.png)
 
  
 
@@ -155,3 +148,13 @@ ref:
 [WebSocket 和 gRPC 服务 - 技术教程](https://knative-sample.com/20-serving/50-websocket-and-grpc/)
 
 [GitHub - knative-sample/grpc-ping-go: grpc-ping-go demo](https://github.com/knative-sample/grpc-ping-go)
+
+[Knative Overview | Kube by Example](https://kubebyexample.com/learning-paths/developing-knative-kubernetes/knative-overview)
+
+[Home - Knative](https://knative.dev/docs/)
+
+[Code samples - gRPC Server - Go - 《Knative v0.24 Documentation》 - 书栈网 · BookStack](https://www.bookstack.cn/read/knative-0.24-en/b9880342e74332d7.md)
+
+[Migrating from Kubernetes Deployment to Knative Serving - Atamel.Dev](https://atamel.dev/posts/2019/07-31_migrating-from-kubernetes-deployment-to-knative-serving/)
+
+[Go &#8211; grpc-go over https: failed rpc error: code = Unavailable desc = transport is closing: &#8211; iTecNote](https://itecnote.com/tecnote/go-grpc-go-over-https-failed-rpc-error-code-unavailable-desc-transport-is-closing/)

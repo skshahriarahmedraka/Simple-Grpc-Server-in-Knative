@@ -1,8 +1,7 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: grpc-knative-cluster1
-  namespace: knative-serving
+  name: grpc-knative-cluster3
 spec:
   template:
     spec:

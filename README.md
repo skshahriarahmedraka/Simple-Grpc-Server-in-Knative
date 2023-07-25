@@ -128,23 +128,17 @@ http://simple-grpc-knative2.default.127.0.0.1.sslip.io
 
 ```
 > nslookup  simple-grpc-knative2.default.127.0.0.1.sslip.io        
-Server:		127.0.0.53
-Address:	127.0.0.53#53
+Server:        127.0.0.53
+Address:    127.0.0.53#53
 
 Non-authoritative answer:
-Name:	simple-grpc-knative2.default.127.0.0.1.sslip.io
+Name:    simple-grpc-knative2.default.127.0.0.1.sslip.io
 Address: 127.0.0.1
-
-
 ```
-
-
 
 ![](./screenshot/Screenshot%20from%202023-07-25%2016-06-52.png)
 
 ![](./screenshot/Screenshot%20from%202023-07-25%2016-07-01.png)
-
-
 
 ### From client Grpc :
 
@@ -153,3 +147,11 @@ Error because Grpc only work on the top of HTTP2 , but Knative is serving a HTTP
 `http://simple-grpc-knative2.default.127.0.0.1.sslip.io`
 
 ![](./screenshot/Screenshot%20from%202023-07-25%2016-30-43.png)
+
+ 
+
+ref:
+
+[WebSocket 和 gRPC 服务 - 技术教程](https://knative-sample.com/20-serving/50-websocket-and-grpc/)
+
+[GitHub - knative-sample/grpc-ping-go: grpc-ping-go demo](https://github.com/knative-sample/grpc-ping-go)

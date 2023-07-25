@@ -33,7 +33,7 @@ import (
 
 func main() {
 	
-	conn, err := grpc.Dial("grpc-knative-cluster1.knative-serving.svc.cluster.local:50051", grpc.WithInsecure(), grpc.WithBlock())
+	conn, err := grpc.Dial("simple-grpc-knative2.default.127.0.0.1.sslip.io:80", grpc.WithInsecure(), grpc.WithBlock())
 	logs.Error("Error in connecting", err)
 	defer conn.Close()
 	fmt.Printf("%T\n",conn)

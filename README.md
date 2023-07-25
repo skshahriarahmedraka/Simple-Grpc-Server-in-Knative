@@ -139,6 +139,10 @@ Address: 127.0.0.1
 
 url : `grpc-knative-cluster4.default.127.0.0.1.sslip.io`
 
+here from client Grpc sending data : `raka`
+
+server sending data : `"Hello 👋 !!! What are you doing " + "raka" + " ?"` 
+
 ![](./screenshot/Screenshot%20from%202023-07-25%2023-48-26.png)
 
  

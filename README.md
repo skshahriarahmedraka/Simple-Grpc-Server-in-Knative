@@ -114,26 +114,19 @@ see all the service
 
 ![](./screenshot/Screenshot%20from%202023-07-25%2023-48-59.png)
 
-
-
-
-
 ### nslookup :
 
 ```
 > nslookup grpc-knative-cluster4.default.127.0.0.1.sslip.io
-Server:		127.0.0.53
-Address:	127.0.0.53#53
+Server:        127.0.0.53
+Address:    127.0.0.53#53
 
 Non-authoritative answer:
-Name:	grpc-knative-cluster4.default.127.0.0.1.sslip.io
+Name:    grpc-knative-cluster4.default.127.0.0.1.sslip.io
 Address: 127.0.0.1
-
 ```
 
 ![](./screenshot/Screenshot%20from%202023-07-25%2023-51-09.png)
-
-
 
 ### From client Grpc :
 
@@ -144,8 +137,6 @@ here from client Grpc sending data : `raka`
 server sending data : `"Hello 👋 !!! What are you doing " + "raka" + " ?"` 
 
 ![](./screenshot/Screenshot%20from%202023-07-25%2023-48-26.png)
-
- 
 
 ref:
 
@@ -162,3 +153,7 @@ ref:
 [Migrating from Kubernetes Deployment to Knative Serving - Atamel.Dev](https://atamel.dev/posts/2019/07-31_migrating-from-kubernetes-deployment-to-knative-serving/)
 
 [Go &#8211; grpc-go over https: failed rpc error: code = Unavailable desc = transport is closing: &#8211; iTecNote](https://itecnote.com/tecnote/go-grpc-go-over-https-failed-rpc-error-code-unavailable-desc-transport-is-closing/)
+
+[GitHub - knative-sample/grpc-ping-go: grpc-ping-go demo](https://github.com/knative-sample/grpc-ping-go)
+
+[Istio](https://istio.io/latest/)
